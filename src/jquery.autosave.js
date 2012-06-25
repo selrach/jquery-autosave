@@ -347,6 +347,9 @@
         if (!isNaN(parseInt(interval))) {
           this.timer = setTimeout(function() {
             self.save(false, self.timer);
+            if($(self.selector).length ===0) {
+               self.stopInterval();
+            }
           }, interval);
         }
     },
